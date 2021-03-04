@@ -1,0 +1,35 @@
+{
+  "name": "shortener-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "ts-node app.ts",
+    "start": "nodemon ./app.js",
+    "prod": "yarn build && yarn start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/express-rate-limit": "^5.1.1",
+    "@types/morgan": "^1.9.2",
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.2.6",
+    "mongoose": "^5.11.18",
+    "morgan": "^1.10.0",
+    "ts-node": "^9.1.1"
+  }
+}
