@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "dev": "ts-node app.ts",
-    "start": "nodemon ./app.js",
+    "start": "nodemon ./dist/app.js",
     "prod": "yarn build && yarn start"
   },
   "keywords": [],
@@ -30,6 +30,7 @@
     "express-rate-limit": "^5.2.6",
     "mongoose": "^5.11.18",
     "morgan": "^1.10.0",
-    "ts-node": "^9.1.1"
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
   }
 }
