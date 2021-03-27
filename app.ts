@@ -1,25 +1,34 @@
 import express from "express";
 import mongoose, { mongo } from "mongoose";
 import morgan from "morgan";
-import rateLimit from "express-rate-limit";
 
-// routes
+import * as config from "./config.json";
+// import rateLimit from "express-rate-limit";
+
 // routes here
-import Main from "./routes/Main";
-
+import Generate from "./routes/Generate";
+import Redirect from "./routes/Redirect";
 
 const app = express();
 app.use(morgan("dev"));
 app.listen(3000);
 
-app.get("/", Main);
+app.use("/generate", Generate);
+app.use("/", Redirect);
 
 // set up default mongoose connection
-var mongoDB = 'mongodb://127.0.0.1/my_database';
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
+var mongoDB = config.mongo;
+mongoose.connect(mongoDB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+});
 
 // get the default connection
 var db = mongoose.connection;
 
 // bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+
+console.log(`mongodb connection: + { mongodb } \n port : 3000`);
