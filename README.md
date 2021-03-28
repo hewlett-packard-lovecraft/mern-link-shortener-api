@@ -1,2 +1,2 @@
 # mern-link-shortener-api
-API foraMERN stack link shortener
+API for a MERN stack link shortener. Recently got around to cleaning it up so that it's semi-readable.
